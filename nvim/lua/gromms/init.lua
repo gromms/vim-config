@@ -1,5 +1,5 @@
 require("gromms.remap")
-require("gromms.packer")
+require("gromms.lazy")
 require("gromms.set")
 
 local augroup = vim.api.nvim_create_augroup

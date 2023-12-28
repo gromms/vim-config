@@ -3,6 +3,7 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+print("hello")
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -13,7 +14,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({ 
+  use({
 	  'folke/tokyonight.nvim',
 	  as = 'tokyonight',
 	  config = function()
@@ -44,4 +45,5 @@ return require('packer').startup(function(use)
   }
   use ('tpope/vim-fugitive')
   use ('mfussenegger/nvim-jdtls')
+  use ('github/copilot.vim')
 end)
