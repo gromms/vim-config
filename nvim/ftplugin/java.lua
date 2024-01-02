@@ -7,7 +7,7 @@ end
 
 local config = {
     cmd = {
-        '/opt/homebrew/opt/jdtls/bin/jdtls',
+        '/home/grom/jdtls/bin/jdtls',
         '-javaagent:/User/grom/.config/nvim/jar/lombok.jar'
     },
     root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
@@ -22,4 +22,5 @@ local config = {
             { noremap = true, silent = true, buffer = bufnr, desc = "Extract method" })
     end
 }
+
 require('jdtls').start_or_attach(config)

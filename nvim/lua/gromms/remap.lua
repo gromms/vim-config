@@ -21,3 +21,5 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<C-,>", "<C-i>", {noremap=true, silent=true})
 vim.keymap.set("n", "<C-.>", "<C-o>", {noremap=true, silent=true})
+
+vim.keymap.set("n", "<leader>w", ":wa<CR>")
