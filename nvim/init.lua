@@ -1,2 +1,3 @@
-require("gromms")
-vim.opt.termguicolors=true
+require("config.lazy")
+require("config.remap")
+require("config.set")
