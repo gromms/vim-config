@@ -57,4 +57,9 @@ setopt PUSHD_MINUS
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
+# Start ssh-agent if not already running
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval "$(ssh-agent -s)"
+fi
+
 eval "$(starship init zsh)"
