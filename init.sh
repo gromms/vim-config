@@ -9,7 +9,6 @@ else
     return 1
 fi
 
-
 curl -sS https://starship.rs/install.sh | sh -s -- -f
 
 base_path=$( realpath "$0"  )
