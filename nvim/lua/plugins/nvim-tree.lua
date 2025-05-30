@@ -28,6 +28,6 @@ return {
             },
         })
 
-        vim.keymap.set('n', '<leader>pv', require('nvim-tree.api').tree.open, opts('Open tree'))
+        vim.keymap.set('n', '<leader>pv', function() require('nvim-tree.api').tree.open({find_file = true}) end, opts('Open tree'))
     end
 }
