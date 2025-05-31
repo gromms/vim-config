@@ -9,7 +9,8 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename "${XDG_CACHE_HOME:-$HOME/.cache}/.zshrc"
 
-autoload -Uz compinit promptinit
+autoload -Uz compaudit compinit promptinit
+compaudit
 compinit
 promptinit
 

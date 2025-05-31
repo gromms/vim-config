@@ -30,9 +30,18 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     fi
     echo "-- Installing dependencies\n"
     brew install "${macos_deps[*]}"
+    echo "-- Setting zsh permissions"
+    chmod g-w,o-w /usr/local/share/zsh/site-functions
+    chmod g-w,o-w /usr/local/share/zsh
 else
     echo "Unsupported OS\n"
     exit 1
+fi
+
+echo "Checking for tpm"
+if [ ! -f "$HOME/.tmux/tpm/tpm" ]; then
+  echo "Tpm does not exists. Cloning repository"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 echo "-- Installing starship zsh theme\n"
