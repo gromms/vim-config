@@ -35,7 +35,15 @@ zle -N down-line-or-beginning-search
 
 autoload -Uz add-zsh-hook
 
-DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
+# Determine a unique dirstack file name based on tmux session or default
+if [[ -n "$TMUX" ]]; then
+  # Extract tmux session name
+  TMUX_SESSION_ID=$(tmux display-message -p '#S' 2>/dev/null)
+  DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs-${TMUX_SESSION_ID}"
+else
+  DIRSTACKFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/dirs"
+fi
+
 if [[ -f "$DIRSTACKFILE" ]] && (( ${#dirstack} == 0 )); then
 	dirstack=("${(@f)"$(< "$DIRSTACKFILE")"}")
 	[[ -d "${dirstack[1]}" ]] && cd -- "${dirstack[1]}"
@@ -64,3 +72,5 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 fi
 
 eval "$(starship init zsh)"
+
+echo "$PWD"
