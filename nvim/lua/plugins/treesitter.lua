@@ -3,6 +3,7 @@ return {
 		'nvim-treesitter/nvim-treesitter',
 		lazy = false,
 		branch = 'master',
+        version = false,
 		build = ':TSUpdate',
 		config = function() 
 			require("nvim-treesitter.configs").setup({
