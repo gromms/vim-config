@@ -61,7 +61,7 @@ echo "---- Tmux sessionizer: $base_path/tmux/tmux-sessionizer -> $HOME/.local/sc
 ln -s "$base_path"/tmux/tmux-sessionizer "$HOME"/.local/scripts
 
 echo "---- Tmux config: $base_path/tmux/.tmux.config -> $HOME\n"
-ln -s "$base_path"/tmux/.tmux.config "$HOME"
+ln -s "$base_path"/tmux/.tmux.conf "$HOME"
 
 mkdir ~/.cache/zsh
 echo "---- ZSH: $base_path/zsh/.zshrc -> $HOME\n"
