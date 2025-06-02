@@ -4,6 +4,7 @@ return {
 		lazy = false,
 		branch = 'master',
         version = false,
+        event = { "BufReadPost", "BufNewFile" },
 		build = ':TSUpdate',
 		config = function() 
 			require("nvim-treesitter.configs").setup({
@@ -34,9 +35,6 @@ return {
 	},
     {
         "windwp/nvim-ts-autotag",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter"
-        },
         config = function()
             require("nvim-ts-autotag").setup({
                 opts = {

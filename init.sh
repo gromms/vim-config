@@ -1,9 +1,8 @@
 #!/bin/bash
 
-common_deps=(tmux neovim ttf-jetbrains-mono-nerd fzf)
+common_deps=(tmux neovim ttf-jetbrains-mono-nerd fzf ripgrep)
 linux_deps=(zsh zsh-completions ${common_deps[@]})
 macos_deps=(${common_deps[@]})
-
 home="${XDG_CACHE_HOME:-$HOME}"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
